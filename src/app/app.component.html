@@ -1,0 +1,24 @@
+<h1>{{ title }}</h1>
+<div class="tc">
+  <h2>Input Details</h2>
+  <div class="pa2">
+    <input
+      type="search"
+      class="pa3 ba b--green bg-lightest-blue"
+      placeholder="search robots"
+      (keydown.enter)="onEnter()"
+      [(ngModel)]="nameList"
+    /><br /><br />
+    <input type="button" value="Clear List" (click)="clearList()" /><br />
+  </div>
+
+  <div>
+    <ul>
+      @for (list of myList; track $index) {
+
+        <li>{{list}}</li>
+      }
+      <p>No list found</p>
+    </ul>
+  </div>
+</div>
